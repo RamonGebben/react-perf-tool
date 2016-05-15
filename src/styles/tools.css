@@ -1,0 +1,26 @@
+
+
+.perf-tool .tools {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.perf-tool .measurements {
+
+}
+
+.perf-tool .measurement {
+  padding: 1em;
+  border-bottom: 1px solud #ccc;
+  cursor: pointer;
+}
+
+.perf-tool .measurement:hover {
+  background-color: #e5e5e5;
+  transition: all .2s ease-out;
+}
+
+.perf-tool .no-measurements {
+  padding: 1em;
+}

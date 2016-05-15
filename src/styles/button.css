@@ -1,0 +1,26 @@
+
+.perf-tool .recButton {
+  padding: 1em;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.perf-tool .recButton.active {
+  border: 1px solid red;
+  background-color: red;
+  box-shadow: 0 0 10px red;
+}
+
+.perf-tool .toggleButton {
+  position: absolute;
+  top: -22px; right: -1px;
+  display: block;
+  width: 5em; height: 2em;
+  border: 1px solid #ddd;
+  border-bottom: 0px solid;
+  padding: 0;
+  background-color: '#fff';
+}

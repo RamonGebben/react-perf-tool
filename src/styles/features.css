@@ -1,0 +1,10 @@
+
+.perf-tool .features {
+  text-align: center;
+}
+
+.perf-tool .feature {
+  border-bottom: 1px solid #ddd;
+  padding: 0.3em;
+  text-align: left;
+}
