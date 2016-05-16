@@ -1,5 +1,7 @@
 # ReactPerfTool
 
+[![Join the chat at https://gitter.im/RamonGebben/react-perf-tool](https://badges.gitter.im/RamonGebben/react-perf-tool.svg)](https://gitter.im/RamonGebben/react-perf-tool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ReactPerfTool tries to give you a more visual way of debugging performance of your React application.
 It does this by using the addons delivered by the React team and community to get measurements and visualize this using graphs. This makes it easier to spot bottlenecks.
 
