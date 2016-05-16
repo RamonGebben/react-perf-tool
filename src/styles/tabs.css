@@ -11,7 +11,6 @@
 }
 
 .perf-tool .tab-header {
-
   display: inline-block;
   padding: 0.8em;
   font-size: 12px;
@@ -21,8 +20,9 @@
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
-  float: left;
   transition: all .2s ease-out;
+  user-select: none;
+  -webkit-user-select: none;  
 }
 
 .perf-tool .tab-header:hover {
@@ -30,8 +30,15 @@
   transition: all .2s ease-out;
 }
 
+.perf-tool .tab-header.left {
+  float: left;
+}
+
+.perf-tool .tab-header.right {
+  float: right;
+}
 .perf-tool .tab-header.active {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #3879D9;
 }
 
 .perf-tool .tab {

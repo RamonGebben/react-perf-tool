@@ -28,6 +28,7 @@ class TabManager extends Component {
         title={tab.key}
         isActive={tab.key === this.state.activeTab}
         key={i}
+        align={tab.props.align}
         onClick={this.onTabClick.bind(this, tab.key)}
       />
     ))

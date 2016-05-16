@@ -1,27 +1,67 @@
 import React, { Component } from 'react';
+import keymaster from 'keymaster';
+
+import defaultSettings from '../constants/defaultSettings';
+import getUserSettings from '../utils/getUserSettings';
+import setUserSettings from '../utils/setUserSettings';
 
 import TimeWasted from './TimeWasted';
 import TabManager from './TabManager';
 import Tab from './Tab';
 
+import Settings from './Settings';
+
 class PerfTool extends Component {
   constructor(props) {
     super(props);
 
+    const userSettings = getUserSettings();
+
     this.state = {
       showing: true,
+      recording: false,
       toolHeight: 400,
+      settings: Object.assign({}, defaultSettings, userSettings),
     };
 
     window.Perf = props.perf;
   }
 
   componentDidMount() {
+    this.enableKeyBindings();
   }
 
+  componentWillUnmount() {
+    this.unbindKeys();
+  }
 
-  hideOrShow() {
+  enableKeyBindings() {
+    const { settings } = this.state;
+    Object.keys(settings.keybindings).forEach(func => {
+      keymaster(settings.keybindings[func], this[func].bind(this));
+    });
+  }
+
+  unbindKeys() {
+    const { settings } = this.state;
+    Object.keys(settings.keybindings).forEach(func => {
+      keymaster.unbind(settings.keybindings[func]);
+    });
+  }
+
+  reloadSettings() {
+    this.unbindKeys();
+    this.enableKeyBindings();
+  }
+
+  toggleVisibility() {
     this.setState({ showing: !this.state.showing });
+  }
+
+  onSettingsUpdate(settings) {
+    setUserSettings(settings);
+    this.setState({ settings });
+    this.reloadSettings();
   }
 
   handleResize(e) {
@@ -41,16 +81,27 @@ class PerfTool extends Component {
       >
       <div className="resize-handler" onDrag={this.handleResize.bind(this)} />
         <button
-          onClick={this.hideOrShow.bind(this)}
-          className="toggleButton"
+          onClick={this.toggleVisibility.bind(this)}
+          className="toggleButton x-button"
         >
-        {this.state.showing ? 'Close' : 'Open'}
+        ×
         </button>
         <TabManager>
-          <Tab key="wastedChart">
+          <Tab
+            key="wastedChart"
+            align="left"
+          >
             <TimeWasted perf={this.props.perf} />
           </Tab>
-
+          <Tab
+            key="settings"
+            align="right"
+          >
+          <Settings
+            settings={this.state.settings}
+            onSettingsUpdate={this.onSettingsUpdate.bind(this)}
+          />
+          </Tab>
         </TabManager>
       </div>
     </div>);

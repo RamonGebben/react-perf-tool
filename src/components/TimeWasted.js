@@ -14,7 +14,13 @@ class TimeWasted extends Component {
     }
   }
 
-  startOrStopRecording() {
+  componentWillReceiveProps(nextProps) {
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+  }
+
+  toggleRecord() {
     if (!this.state.recording) {
       this.props.perf.start();
     } else {
@@ -38,7 +44,7 @@ class TimeWasted extends Component {
     }
 
     const nState = this.state.measurements.concat(timeWasted);
-    this.setState({ measurements: nState });
+    this.setState({ measurements: nState, activeMeasurement: (nState.length - 1) });
   }
 
   onMeasurementChange(measurement) {
@@ -46,12 +52,19 @@ class TimeWasted extends Component {
     this.setState({ activeMeasurement: measurementIndex });
   }
 
+  removeMeasurement(measurement) {
+    const index = this.state.measurements.findIndex(m => m.createdAt === measurement.createdAt);
+    const measurements = Object.assign([], this.state.measurements);
+    measurements.splice(index, 1);
+    this.setState({ measurements });
+  }
+
   render() {
     return (<div className="time-wasted">
       <div className="left-hand">
         <div className="tools">
           <button
-            onClick={this.startOrStopRecording.bind(this)}
+            onClick={this.toggleRecord.bind(this)}
             className={`recButton ${this.state.recording ? 'active' : null}`}
           />
         </div>
@@ -59,11 +72,12 @@ class TimeWasted extends Component {
         <ul className="measurements">
           {this.state.measurements.map((measurement, i) => {
             return (<li
-              className="measurement"
+              className={`measurement ${i === this.state.activeMeasurement ? 'active' : '' }`}
               key={i}
               onClick={this.onMeasurementChange.bind(this, measurement)}
             >
               {formatTime(measurement.createdAt)}
+              <button className="removeMeasurement x-button" onClick={this.removeMeasurement.bind(this, measurement)}>×</button>
             </li>);
           })}
         </ul> : <div className="no-measurements">No measurements yet, record to view some results</div>}
@@ -73,6 +87,7 @@ class TimeWasted extends Component {
           <ChartComponent
             width={10}
             height={10}
+            label="Time wasted in miliseconds"
             measurement={this.state.measurements[this.state.activeMeasurement]}
           />
         }

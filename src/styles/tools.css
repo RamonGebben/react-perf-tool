@@ -3,6 +3,7 @@
 .perf-tool .tools {
   padding: 0.5em;
   border-bottom: 1px solid #ccc;
+  color: #5A5A5A;
 }
 
 
@@ -14,9 +15,11 @@
   padding: 1em;
   border-bottom: 1px solud #ccc;
   cursor: pointer;
+  position: relative;
 }
 
-.perf-tool .measurement:hover {
+.perf-tool .measurement:hover,
+.perf-tool .measurement.active {
   background-color: #e5e5e5;
   transition: all .2s ease-out;
 }

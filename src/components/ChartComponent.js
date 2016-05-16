@@ -30,7 +30,7 @@ class ChartComponent extends Component {
       data: {
           labels: labels,
           datasets: [{
-              label: 'Time wasted',
+              label: this.props.label,
               backgroundColor: "rgba(75,192,192,0.4)",
               data: data
           }]
@@ -48,7 +48,7 @@ class ChartComponent extends Component {
   }
 
   render() {
-    return (<div className="chart-container" style={{ maxWidth: '800px' }}>
+    return (<div className="chart-container" style={{ maxWidth: '900px' }}>
       <canvas id="perf-tool-chart-ctx" style={{ width: `${this.props.width}px`, height: `${this.props.height}px`}} />
     </div>);
   }
