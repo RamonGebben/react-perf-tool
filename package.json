@@ -46,7 +46,7 @@
     "performance"
   ],
   "author": "Ramon Gebben <ramon@ra-ge.net>",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/RamonGebben/react-perf-tool/issues"
   },
