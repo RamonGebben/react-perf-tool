@@ -39,19 +39,18 @@ class Settings extends Component {
           <div className="settings-category" key={cat}>
             <h4>{titleize(cat)}</h4>
             <ul className="settings-list">
-              {Object.keys(settings[cat]).map((option, i) => {
-                return (<li key={i}>
+              {Object.keys(settings[cat]).map((option, i) => (
+                <li key={i}>
                   <label>{option}:</label>
                   {this.getEditor(cat, option, settings[cat][option])}
-                </li>);
-              })}
+                </li>)
+              )}
             </ul>
           </div>
         ))}
       <button onClick={this.onSettingsUpdate.bind(this)}>Save settings</button>
-      </div>);
+    </div>);
   }
-
 }
 
 export default Settings;

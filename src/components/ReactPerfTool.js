@@ -11,7 +11,7 @@ import Tab from './Tab';
 
 import Settings from './Settings';
 
-class PerfTool extends Component {
+class ReactPerfTool extends Component {
   constructor(props) {
     super(props);
 
@@ -35,6 +35,12 @@ class PerfTool extends Component {
     this.unbindKeys();
   }
 
+  onSettingsUpdate(settings) {
+    setUserSettings(settings);
+    this.setState({ settings });
+    this.reloadSettings();
+  }
+
   enableKeyBindings() {
     const { settings } = this.state;
     Object.keys(settings.keybindings).forEach(func => {
@@ -49,6 +55,12 @@ class PerfTool extends Component {
     });
   }
 
+  handleResize(e) {
+    const windowHeight = window.innerHeight;
+    const toolHeight = windowHeight - e.screenY;
+    if (toolHeight < windowHeight && toolHeight > 300) this.setState({ toolHeight });
+  }
+
   reloadSettings() {
     this.unbindKeys();
     this.enableKeyBindings();
@@ -58,28 +70,16 @@ class PerfTool extends Component {
     this.setState({ showing: !this.state.showing });
   }
 
-  onSettingsUpdate(settings) {
-    setUserSettings(settings);
-    this.setState({ settings });
-    this.reloadSettings();
-  }
-
-  handleResize(e) {
-    const windowHeight = window.innerHeight;
-    const toolHeight =  windowHeight - e.screenY
-    if (toolHeight < windowHeight && toolHeight > 300) this.setState({ toolHeight });
-  }
-
   render() {
     return (<div className="perf-app-shell">
       <div
-        className={`perf-tool container bottom ${this.state.showing ? null : 'hidden' }`}
+        className={`perf-tool container bottom ${this.state.showing ? null : 'hidden'}`}
         style={{
           height: `${this.state.toolHeight}px`,
           bottom: `${this.state.showing ? 0 : -this.state.toolHeight}px`,
         }}
       >
-      <div className="resize-handler" onDrag={this.handleResize.bind(this)} />
+        <div className="resize-handler" onDrag={this.handleResize.bind(this)} />
         <button
           onClick={this.toggleVisibility.bind(this)}
           className="toggleButton x-button"
@@ -97,10 +97,10 @@ class PerfTool extends Component {
             key="settings"
             align="right"
           >
-          <Settings
-            settings={this.state.settings}
-            onSettingsUpdate={this.onSettingsUpdate.bind(this)}
-          />
+            <Settings
+              settings={this.state.settings}
+              onSettingsUpdate={this.onSettingsUpdate.bind(this)}
+            />
           </Tab>
         </TabManager>
       </div>
@@ -108,4 +108,4 @@ class PerfTool extends Component {
   }
 }
 
-export default PerfTool;
+export default ReactPerfTool;

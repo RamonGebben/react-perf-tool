@@ -23,5 +23,23 @@
   },
   "parser": "babel-eslint",
   "plugins": [],
-  "rules": {}
+  "extends": "airbnb",
+  "rules": {
+    "max-len": 0,
+    "consistent-return": 0,
+    "new-cap": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
+    "no-unused-vars": 0,
+    "no-alert": 0,
+    "no-console": 0,
+    "no-case-declarations": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-no-bind": 0,
+    "react/prop-types": 0,
+    "react/require-render-return": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "block-scoped-var": 0,
+    "no-underscore-dangle": 0
+  },
 }

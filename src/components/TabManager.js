@@ -3,7 +3,7 @@ import TabHeader from './TabHeader';
 
 class TabManager extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.children = [].concat(props.children);
     this.state = {
@@ -31,7 +31,8 @@ class TabManager extends Component {
         align={tab.props.align}
         onClick={this.onTabClick.bind(this, tab.key)}
       />
-    ))
+    ));
+
     return (<div className="tab-manager">
       <div className="tab-bar">
         {tabs}

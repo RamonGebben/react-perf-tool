@@ -1,4 +1,4 @@
-import PerfTool from './components/PerfTool';
+import ReactPerfTool from './components/ReactPerfTool';
 
 // Import them styles
 import './styles/reset.css';
@@ -11,4 +11,4 @@ import './styles/tabs.css';
 import './styles/tools.css';
 import './styles/settings.css';
 
-export default PerfTool;
+export default ReactPerfTool;
