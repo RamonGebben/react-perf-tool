@@ -1,8 +1,14 @@
-import chai from 'chai';
-const expect = chai.expect;
+import React from 'react';
+import { expect } from 'chai';
+import { mount, shallow } from 'enzyme';
 
-describe('test', () => {
-  it('should return true', () => {
-    expect(true).to.be.truel
+function Foo(props) {
+  return (<div></div>);
+}
+
+describe('<Foo />', () => {
+  it('should not be undefined', () => {
+    const wrapper = mount(<Foo />);
+    expect(wrapper).to.not.be.undefined;
   });
 });

@@ -1,6 +1,6 @@
 
 
-export default function getUserSettings() {
-  const userSettings = Object.assign({}, JSON.parse(window.localStorage.getItem('reactPerfToolSettings')));
+export default function getUserSettings(storage) {
+  const userSettings = Object.assign({}, JSON.parse(storage.getItem('reactPerfToolSettings')));
   return userSettings || {};
 }

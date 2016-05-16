@@ -1,5 +1,5 @@
 
 
-export default function setUserSettings(settings) {
-  return window.localStorage.setItem('reactPerfToolSettings', JSON.stringify(settings));
+export default function setUserSettings(settings, storage) {
+  return storage.setItem('reactPerfToolSettings', JSON.stringify(settings));
 }

@@ -15,7 +15,7 @@ class ReactPerfTool extends Component {
   constructor(props) {
     super(props);
 
-    const userSettings = getUserSettings();
+    const userSettings = getUserSettings(window.localStorage);
 
     this.state = {
       showing: true,
@@ -36,7 +36,7 @@ class ReactPerfTool extends Component {
   }
 
   onSettingsUpdate(settings) {
-    setUserSettings(settings);
+    setUserSettings(settings, window.localStorage);
     this.setState({ settings });
     this.reloadSettings();
   }
