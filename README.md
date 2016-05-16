@@ -1,5 +1,7 @@
 # ReactPerfTool
 
+[![Build Status](https://travis-ci.org/RamonGebben/react-perf-tool.svg?branch=master)](https://travis-ci.org/RamonGebben/react-perf-tool) [![Gitter](https://badges.gitter.im/RamonGebben/react-perf-tool.svg)](https://gitter.im/RamonGebben/react-perf-tool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ReactPerfTool tries to give you a more visual way of debugging performance of your React application.
 It does this by using the addons delivered by the React team and community to get measurements and visualize this using graphs. This makes it easier to spot bottlenecks.
 
@@ -43,4 +45,7 @@ For testing of components the project uses [Enzyme](https://github.com/airbnb/en
 
 * `npm run build` - produces production build
 * `npm run dev` - start webpack watch
-* `npm run test` - runs the tests
+* `npm run test` - runs the tests and lints
+  - `npm run lint` - lints all the code
+  - `npm run test:unit` - run only the unit tests
+  - `npm run test:component` - run only the component tests

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev",
-    "test": "npm run test:unit && npm run test:component",
+    "test": "npm run lint && npm run test:unit && npm run test:component",
     "test:unit": "mocha --compilers js:babel-core/register --colors ./test/unit/*.spec.js",
     "test:component": "mocha --compilers js:babel-core/register --colors ./test/component/*.spec.js",
     "lint": "eslint ./src/**/*.js"
