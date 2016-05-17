@@ -1,6 +1,8 @@
 # ReactPerfTool
 
 [![Build Status](https://travis-ci.org/RamonGebben/react-perf-tool.svg?branch=master)](https://travis-ci.org/RamonGebben/react-perf-tool) [![Gitter](https://badges.gitter.im/RamonGebben/react-perf-tool.svg)](https://gitter.im/RamonGebben/react-perf-tool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![npm version](https://badge.fury.io/js/react-perf-tool.svg)](https://badge.fury.io/js/react-perf-tool)
+[![license](https://img.shields.io/github/license/RamonGebben/react-perf-tool.svg?maxAge=2592000)](https://github.com/RamonGebben/react-perf-tool/blob/master/LICENSE)
 
 ReactPerfTool tries to give you a more visual way of debugging performance of your React application.
 It does this by using the addons delivered by the React team and community to get measurements and visualize this using graphs. This makes it easier to spot bottlenecks.

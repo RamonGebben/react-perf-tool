@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import getUserSettings from '../../src/utils/getUserSettings';
 import setUserSettings from '../../src/utils/setUserSettings';
 
-describe('setUserSettings', () => {
+describe.only('setUserSettings', () => {
   it('should return return a settings object from mock storage', () => {
     const localStorage = {
       storage: {},
