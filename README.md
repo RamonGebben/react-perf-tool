@@ -1,6 +1,6 @@
 # ReactPerfTool
 
-[![Package Quality](http://npm.packagequality.com/badge/react-perf-tool.png)](http://packagequality.com/#?package=react-perf-tool)
+[![Package Quality](http://npm.packagequality.com/shield/react-perf-tool.png)](http://packagequality.com/#?package=react-perf-tool)
 [![Build Status](https://travis-ci.org/RamonGebben/react-perf-tool.svg?branch=master)](https://travis-ci.org/RamonGebben/react-perf-tool) [![Gitter](https://badges.gitter.im/RamonGebben/react-perf-tool.svg)](https://gitter.im/RamonGebben/react-perf-tool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![npm version](https://badge.fury.io/js/react-perf-tool.svg)](https://badge.fury.io/js/react-perf-tool)
 [![license](https://img.shields.io/github/license/RamonGebben/react-perf-tool.svg?maxAge=2592000)](https://github.com/RamonGebben/react-perf-tool/blob/master/LICENSE)
