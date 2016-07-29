@@ -20,7 +20,7 @@ class ChartComponent extends Component {
 
   renderChart(measurements) {
     const data = measurements.map(measurement => measurement.inclusiveRenderDuration);
-    const labels = measurements.map(measurement => measuremen.key);
+    const labels = measurements.map(measurement => measurement.key);
     this.chart = new Chart(document.getElementById('perf-tool-chart-ctx'), {
       type: 'bar',
       data: {
