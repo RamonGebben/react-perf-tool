@@ -19,8 +19,8 @@ class ChartComponent extends Component {
   }
 
   renderChart(measurements) {
-    const data = measurements.map(measurement => measurement['Wasted time (ms)']);
-    const labels = measurements.map(measurement => measurement['Owner > component']);
+    const data = measurements.map(measurement => measurement.inclusiveRenderDuration);
+    const labels = measurements.map(measurement => measurement.key);
     this.chart = new Chart(document.getElementById('perf-tool-chart-ctx'), {
       type: 'bar',
       data: {
