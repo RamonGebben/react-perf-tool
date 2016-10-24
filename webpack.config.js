@@ -1,11 +1,16 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var path = require('path');
 var env = require('yargs').argv.mode;
 
 var libraryName = 'react-perf-tool';
 
-var plugins = [], outputFile;
+var outputFile;
+
+var plugins = [
+  new ExtractTextPlugin('styles.css', { allChunks: true }),
+];
 
 if (env === 'build') {
   plugins.push(new UglifyJsPlugin({ minimize: true }));
@@ -38,7 +43,8 @@ var config = {
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css']
+        loader: ExtractTextPlugin.extract('style', 'css'),
+        exclude: /node_modules/
       }
     ]
   },
