@@ -3,6 +3,7 @@
   "version": "0.1.7",
   "description": "Record and debug React performance from the browser",
   "main": "lib/react-perf-tool.js",
+  "typings": "lib/react-perf-tool.d.ts",
   "scripts": {
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev",
