@@ -20,6 +20,9 @@ npm i react-perf-tool react-addons-perf -D
 import ReactPerfTool from 'react-perf-tool';
 import Perf from 'react-addons-perf';
 
+// Import styles if they don't get loaded already
+import 'react-perf-tool/lib/styles.css';
+
 export default function YourApp(props) {
   return (<div className="your-app">
     {/*...yourApp */}
