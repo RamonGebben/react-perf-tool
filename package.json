@@ -1,6 +1,6 @@
 {
   "name": "react-perf-tool",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Record and debug React performance from the browser",
   "main": "lib/react-perf-tool.js",
   "typings": "lib/react-perf-tool.d.ts",
