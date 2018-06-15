@@ -1,3 +1,10 @@
+# Deprecated 😞
+
+> As of React 16, react-addons-perf is not supported. Please use your browser’s profiling tools to get insight into which components re-render.
+
+For examples on how to use browsers profiler for performance testing check the [React Docs](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)
+
+
 # ReactPerfTool
 
 [![Package Quality](http://npm.packagequality.com/shield/react-perf-tool.png)](http://packagequality.com/#?package=react-perf-tool)
