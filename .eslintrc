@@ -35,6 +35,7 @@
     "no-console": 0,
     "no-case-declarations": 0,
     "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
     "react/jsx-no-bind": 0,
     "react/prop-types": 0,
     "react/require-render-return": 0,

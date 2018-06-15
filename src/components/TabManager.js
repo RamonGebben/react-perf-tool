@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import TabHeader from './TabHeader';
 
-class TabManager extends Component {
+const Wrapper = styled.div`
+  position: relative;
+`;
 
+const TabBar = styled.div`
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #CCCCCC;
+`;
+
+class TabManager extends Component {
   constructor(props) {
     super(props);
     this.children = [].concat(props.children);
@@ -33,12 +44,13 @@ class TabManager extends Component {
       />
     ));
 
-    return (<div className="tab-manager">
-      <div className="tab-bar">
-        {tabs}
-      </div>
-      {this.children.find(child => child.key === this.state.activeTab)}
-    </div>);
+    return (
+      <Wrapper>
+        <TabBar className="tab-bar">
+          {tabs}
+        </TabBar>
+        {this.children.find(child => child.key === this.state.activeTab)}
+      </Wrapper>);
   }
 }
 
